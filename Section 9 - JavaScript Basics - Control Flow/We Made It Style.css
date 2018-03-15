@@ -1,0 +1,11 @@
+.center {
+    margin: 20%;
+    padding: 10px;
+    font-size: 500px;
+    text-align: center;
+}
+
+.grad {
+	background: linear-gradient(to bottom right, red, yellow) no-repeat;
+	background-repeat: no-repeat;
+}
