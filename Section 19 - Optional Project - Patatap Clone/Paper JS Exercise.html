@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Paper JS Exercise</title>
+	<link rel="stylesheet" type="text/css" href="Paper JS Exercise Style.css">
+
+	<script type="text/javascript" src="paper-full.js"></script>
+	<script type="text/paperscript" canvas="myCanvas">
+
+	// Initialize array to store squares
+	var mySquareArray = [];
+
+	// Create grid of squares based on the screen dimensions (fullscreen)
+	// Initialize the fill color of each square and add to array
+	for (var x = 0; x < 1583; x += 100) {
+		for (var y = 0; y < 800; y += 100) {
+			var mySquare = new Path.Rectangle({
+				point: [x, y],
+				size: [30, 30],
+				strokeColor: 'white'
+			});
+			mySquare.fillColor = 'red';
+			mySquareArray.push(mySquare);
+		}
+	}
+
+	// On each frame, for each square in the array, perform the following tasks
+	function onFrame(event) {
+		for (var i = 0; i < mySquareArray.length; i++) {
+			// Each frame, rotate the path by 3 degrees:
+			mySquareArray[i].rotate(3);
+			// Each frame, change the color by adding 1 to hue
+			mySquareArray[i].fillColor.hue += 1;
+		}
+	}
+
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>
