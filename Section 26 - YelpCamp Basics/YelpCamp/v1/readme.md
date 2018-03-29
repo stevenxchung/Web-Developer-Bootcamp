@@ -1,4 +1,4 @@
-# YelpCamp
+# YelpCamp Application v1
 
 ## Initial Setup
 * Add Landing Page
