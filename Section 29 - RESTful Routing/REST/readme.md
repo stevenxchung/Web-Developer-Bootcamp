@@ -7,7 +7,7 @@ Additionally, RESTful systems are stateless i.e. the server does not need to kno
 
 For more on REST: https://www.codecademy.com/articles/what-is-rest
 
-## Examples (see RESTfulChart.html for a a more detailed chart)
+## Examples (see RESTfulChart.html for a more detailed chart)
 Name - Path - HTTP Verb Purpose
 * Index - /dogs - GET - List all dogs
 * New - /dogs/new - GET - Show new dog form
