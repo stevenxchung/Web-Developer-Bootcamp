@@ -8,7 +8,7 @@ var express = require("express"),
     seedDB = require("./seeds");
 
 // Standard format to use the above tools in this application
-mongoose.connect("mongodb://localhost/yelp_camp_v4");
+mongoose.connect("mongodb://localhost/yelp_camp_v5");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
