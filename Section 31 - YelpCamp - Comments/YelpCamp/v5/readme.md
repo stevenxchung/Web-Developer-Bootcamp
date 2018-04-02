@@ -26,7 +26,7 @@ Each campground has:
 * Add a navbar to all templates
 * Style the new campground form
 
-# *=====YelpCamp v2 Changes=====*
+# *~YelpCamp v2 Changes~*
 
 For YelpCamp to function properly, MongoDB needs to be installed
 
@@ -59,7 +59,7 @@ For YelpCamp to function properly, MongoDB needs to be installed
 * Show db.collection.drop()
 * Add a show route/template
 
-# *=====YelpCamp v3 Changes=====*
+# *~YelpCamp v3 Changes~*
 
 ## Refactor Mongoose Code
 * Create a models directory
@@ -74,14 +74,14 @@ For YelpCamp to function properly, MongoDB needs to be installed
 * Make our errors go away
 * Display comments on campground show page
 
-# *=====YelpCamp v4 Changes=====*
+# *~YelpCamp v4 Changes~*
 
 ## Comment New/Create
 * Discuss nested routes
 * Add the comment new and create routes
 * Add the new comment form
 
-# *=====YelpCamp v5 Changes=====*
+# *~YelpCamp v5 Changes~*
 
 ## Styling Show Page
 * Add sidebar to show page
