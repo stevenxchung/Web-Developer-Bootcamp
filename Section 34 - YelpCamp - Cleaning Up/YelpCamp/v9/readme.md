@@ -26,9 +26,9 @@ Each campground has:
 * Add a navbar to all templates
 * Style the new campground form
 
-```diff
-## + YelpCamp v2 Updates
-```
+
+## --- YelpCamp v2 Updates
+
 For YelpCamp to function properly, MongoDB needs to be installed
 
 # MongoDB installation
