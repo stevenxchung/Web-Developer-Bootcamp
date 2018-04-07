@@ -187,11 +187,11 @@ Comment Destroy Route:      /campgrounds/:id/comments/:comment_id
 # Dynamic Price Feature
 * Add price to campground model as a String datatype
 * Add price to views/campgrounds/new.ejs and views/campgrounds/edit.ejs (new and edit forms)
-* Add price to views/camprounds/show.ejs (campground show page)
+* Add price to views/campgrounds/show.ejs (campground show page)
 
 # *---YelpCamp v12 (Deployed) Updates---*
 
-# Pushing to Haroku
+# Pushing to Heroku
 * Standard steps and commands to push a stable build to Heroku
 	* git status
 	* git add .
@@ -200,6 +200,6 @@ Comment Destroy Route:      /campgrounds/:id/comments/:comment_id
 
 # MongoDB Deployment
 * Add a database
-* Add a databse user
+* Add a database user
 * Configure MongoDB URI (see http://docs.mlab.com/connecting/#connect-string)
 * Add MongoDB URI to Heroku via dashboard or bash commands (see https://devcenter.heroku.com/articles/mongolab)
