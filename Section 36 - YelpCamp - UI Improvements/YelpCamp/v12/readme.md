@@ -1,4 +1,4 @@
-# YelpCamp Application v12
+# YelpCamp Application v12 (Deployed)
 
 ## Initial Setup
 * Add Landing Page
@@ -187,4 +187,4 @@ Comment Destroy Route:      /campgrounds/:id/comments/:comment_id
 # Dynamic Price Feature
 * Add price to campground model as a String datatype
 * Add price to views/campgrounds/new.ejs and views/campgrounds/edit.ejs (new and edit forms)
-* Add price to views/camprounds/show.ejs (campground show page)
+* Add price to views/campgrounds/show.ejs (campground show page)
