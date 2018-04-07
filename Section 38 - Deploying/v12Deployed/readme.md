@@ -1,4 +1,4 @@
-# YelpCamp Application v12
+# YelpCamp Application v12 (Deployed)
 
 ## Initial Setup
 * Add Landing Page
@@ -188,3 +188,18 @@ Comment Destroy Route:      /campgrounds/:id/comments/:comment_id
 * Add price to campground model as a String datatype
 * Add price to views/campgrounds/new.ejs and views/campgrounds/edit.ejs (new and edit forms)
 * Add price to views/camprounds/show.ejs (campground show page)
+
+# *---YelpCamp v12 (Deployed) Updates---*
+
+# Pushing to Haroku
+* Standard steps and commands to push a stable build to Heroku
+	* git status
+	* git add .
+	* git commit -m "[updates/changes]"
+	* git push heroku master
+
+# MongoDB Deployment
+* Add a database
+* Add a databse user
+* Configure MongoDB URI (see http://docs.mlab.com/connecting/#connect-string)
+* Add MongoDB URI to Heroku via dashboard or bash commands (see https://devcenter.heroku.com/articles/mongolab)
