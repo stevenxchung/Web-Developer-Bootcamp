@@ -4,6 +4,89 @@ Notes from this section on tricky JavaScript topics
 
 ## Keyword *this*
 
+What is *this*?
+* The keyword *this* is a reserved keyword in JavaScript
+* Usually determined by how a function is called (what we call "execution context")
+* Can be determined using four rules (global, object/implicit, explicit, new)
+
+### Rule 1 - Global Context
+
+* When the keyword *this* is not inside of a declared object, its value is the global object. 
+* Enabling strict mode makes *this* undefined if used inside of a function since declaring a global variable inside of a function is not a good practice.
+
+### Rule 2 - Implicit/Object
+
+* When the keyword *this* is inside of a declared object we look at the closest parent object to figure out the value of *this*
+
+```javascript
+ // Strict mode does not apply here
+var person = {
+	firstName: "Elie",
+	sayHi: function() {
+		return "Hi " + this.firstName
+	},
+	determineContext: function() {
+		return this === person
+	}
+}
+// Testing sayHi() and determineContext()
+person.sayHi() // "Hi Elie"
+person.determineContext() // true
+```
+
+### Rule 3 - Explicit Binding
+
+We can choose what we want the context of *this* to be using the call(), apply(), or bind() method. These methods can only be applied to functions.
+
+Name of Method | Parameters | Invoke Immediately?
+--- | --- | ---
+call() | thisArg, a, b, c,... | Yes
+apply() | thisArg, [a, b, c,...] | Yes
+bind() | thisArg, a, b, c,... | Yes
+
+In the following example we have setTimeout() which happens to be global as it is called at a later time, therefore *this* becomes global
+
+```javascript
+var colt = {
+	firstName: "Colt",
+	sayHi: function() {
+		setTimeout(function() {
+			console.log("Hi " + this.firstName)
+		}, 1000)
+	}
+}
+// Testing sayHi()
+colt.sayHi() // Hi undefined (1000 ms later)
+```
+
+How do we solve this problem? Use bind()
+
+```javascript
+var colt = {
+	firstName: "Colt",
+	sayHi: function() {
+		setTimeout(function() {
+			console.log("Hi " + this.firstName)
+		}.bind(this), 1000)
+	}
+}
+// Testing sayHi()
+colt.sayHi() // Hi Colt (1000 ms later)
+```
+
+### Rule 4 - The *new* Keyword
+
+We can also set the context of the keyword *this* using the *new* keyword:
+
+```javascript
+function Person(firstName, lastName) {
+	this.firstName = firstName;
+	this.lastName = lastName;
+}
+// Create a new instance
+var steven = new Person("Steven", "Chung");
+```
+
 ## Object-Oriented Programming
 
 * A programming model based around the idea of objects
@@ -35,9 +118,9 @@ firstHouse // undefined
 
 Why is our first House undefined?
 * We are not return anything from the function
-* We are explicitly binding the keyword 'this' or placing it inside of a declared object. This means the value of the keyword 'this' will be the global object.
+* We are explicitly binding the keyword *this* or placing it inside of a declared object. This means the value of the keyword *this* will be the global object.
 
-To fix this we introduce the keyword 'new' as follows:
+To fix this we introduce the keyword *new* as follows:
 
 ```javascript
 var firstHouse = new House(2, 2, 1000);
@@ -46,10 +129,10 @@ firstHouse.bathrooms // 2
 firstHouse.Sqft // 1000
 ```
 
-The keyword 'new' performs the following:
+The keyword *new* performs the following:
 * Creates an empty object
-* Sets the keyword 'this' to be that empty object
-* Returns (implicitly) 'this'
+* Sets the keyword *this* to be that empty object
+* Returns (implicitly) *this*
 * Add a property to the empty object called "__proto__" which links the prototype property on the constructor function to the empty object
 
 ### Multiple Constructors
@@ -85,7 +168,7 @@ function Motorcycle(make, model, year) {
 }
 ```
 
-Using the keyword "arguments" we can pass all the arguments of a paticular function through to simplify further:
+Using the keyword "arguments" we can pass all the arguments of a particular function through to simplify further:
 
 ```javascript
 function Motorcycle(make, model, year) {
@@ -106,7 +189,7 @@ Here is an example without using protoypes:
 function Dog(name, age) {
 	this.name = name;
 	this.age = age;
-	// As a bonus, add a function for each dog called 'bark', which console.log's the name of the dog added to the string 'just barked!'
+	// As a bonus, add a function for each dog called "bark", which console.log's the name of the dog added to the string "just barked!"
 	this.bark = function() {
 		console.log(this.name + " just barked!");
 	}
@@ -126,8 +209,8 @@ Dog.prototype.bark = function () {
 	return this.name + " just barked!";
 }
 // Testing Dog constructor and bark()
-var rusty = new Dog('Rusty', 3);
-var fido = new Dog('Fido', 1);
+var rusty = new Dog("Rusty", 3);
+var fido = new Dog("Fido", 1);
 
 rusty.bark() // Rusty just barked!
 fido.bark() // Fido just barked!
