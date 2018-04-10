@@ -1,4 +1,4 @@
-# JavaScript - The Trick Stuff
+# JavaScript - The Tricky Stuff
 
 Notes from this section on tricky JavaScript topics
 
