@@ -11,7 +11,7 @@ What is *this*?
 
 ### Rule 1 - Global Context
 
-* When the keyword *this* is not inside of a declared object, its value is the global object. 
+* When the keyword *this* is not inside of a declared object, its value is the global object.
 * Enabling strict mode makes *this* undefined if used inside of a function since declaring a global variable inside of a function is not a good practice.
 
 ### Rule 2 - Implicit/Object
@@ -107,7 +107,7 @@ We can use a constructor function as a blueprint for what something should be:
  }
 ```
 
-### The *new* Keyword 
+### The *new* Keyword
 
 Following the example above, if we run
 
@@ -117,7 +117,7 @@ firstHouse // undefined
 ```
 
 Why is our first House undefined?
-* We are not return anything from the function
+* We are not returning anything from the function
 * We are explicitly binding the keyword *this* or placing it inside of a declared object. This means the value of the keyword *this* will be the global object.
 
 To fix this we introduce the keyword *new* as follows:
@@ -185,7 +185,7 @@ Prototypes allow us to eliminate redundancies when instances are created.
 Here is an example without using protoypes:
 
 ```javascript
-// Create a constructor function for a Dog - each dog should have a name and an age. 
+// Create a constructor function for a Dog - each dog should have a name and an age.
 function Dog(name, age) {
 	this.name = name;
 	this.age = age;
