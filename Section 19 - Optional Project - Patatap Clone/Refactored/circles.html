@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>Circles</title>
-	<script type="text/javascript" src="paper-full.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.9/howler.js"></script>
+	<script type="text/javascript" src="paper-full.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.9/howler.js"></script>
 	<link rel="stylesheet" type="text/css" href="circles.css">
 
 	<script type="text/paperscript" canvas="myCanvas">
@@ -178,7 +179,7 @@
 			var randomPoint = Point.random();
 			var point = maxPoint * randomPoint;
 			var newCircle = new Path.Circle(point, 300);
-			
+
 			newCircle.fillColor = keyData[event.key].color;
 			keyData[event.key].sound.play();
 
@@ -191,7 +192,7 @@
 		for (var i = 0; i < circles.length; i++) {
 			circles[i].fillColor.hue += 1;
 			circles[i].scale(.9);
-			
+
 			// If the circle area is less than 1 perform the following actions
 			if(circles[i].area < 1) {
 				// Remove the circle from the canvas
